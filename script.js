@@ -4,7 +4,6 @@ const result = document.getElementById('result')
 fetch('cars.json')
     .then(res => res.json())
     .then(data => {
-
         for (let key in data.cars) {
             if (data.cars[key].brand) {
                 const option = document.createElement('option')
@@ -26,4 +25,7 @@ fetch('cars.json')
                 })
             })
         }
+    })
+    .catch(error => {
+        console.log(error.message);
     })
